@@ -4,6 +4,7 @@
     package="com.dotrinh.intentservicealarmmanager">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:allowBackup="true"
@@ -26,6 +27,10 @@
         <receiver
             android:name=".MyAlarmReceiver"
             android:process=":remote" />
+
+        <service android:name=".MyJobIntentService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
     </application>
 
 </manifest>

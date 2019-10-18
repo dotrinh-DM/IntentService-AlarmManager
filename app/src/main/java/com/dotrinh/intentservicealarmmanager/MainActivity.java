@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         scheduleAlarm();
     }
 
+    //start 1 process va goi onReceive trong broadcast 60s 1 lan.
+    //ham trong broadcast se goi service de noti
     public void scheduleAlarm() {
         Intent intent = new Intent(getApplicationContext(), MyAlarmReceiver.class);
         final PendingIntent pIntent = PendingIntent.getBroadcast(this, MyAlarmReceiver.REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);

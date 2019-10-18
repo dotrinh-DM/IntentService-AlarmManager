@@ -22,8 +22,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".MyTestService" />
-
         <receiver
             android:name=".MyAlarmReceiver"
             android:process=":remote" />

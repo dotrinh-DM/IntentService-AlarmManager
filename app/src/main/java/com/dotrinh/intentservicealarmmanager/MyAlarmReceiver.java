@@ -8,18 +8,12 @@ import android.util.Log;
 public class MyAlarmReceiver extends BroadcastReceiver {
     public static final int REQUEST_CODE = 12345;
     public static final String ACTION = "com.dotrinh.intentservicealarmmanager";
-    Context context;
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO: 2019-10-18 old os
-//        Intent i = new Intent(context, MyTestService.class);
-//        i.putExtra("foo", "bar");
-//        context.startService(i);
-//
         // TODO: 2019-10-18 old and new os
-        MyJobIntentService.enqueueWork(context, new Intent());
         Log.i("MyAlarmReceiver", "onReceive running");
+        MyJobIntentService.enqueueWork(context, new Intent());
     }
 
     //https://stackoverflow.com/questions/46445265/android-8-0-java-lang-illegalstateexception-not-allowed-to-start-service-inten

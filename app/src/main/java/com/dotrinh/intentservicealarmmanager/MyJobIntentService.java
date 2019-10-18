@@ -23,12 +23,9 @@ public class MyJobIntentService extends JobIntentService {
 
     @Override
     protected void onHandleWork(@NonNull Intent intent) {
-        // TODO: 2019-10-18 it works on old OS only
-//        NewMessageNotification.notify(getApplicationContext(), "Vi du", 12);
-
         // TODO: 2019-10-18 support new OS Noti
-        showNotification(getApplicationContext(), "Tieu de", "Noi dung...", new Intent());
         Log.i("MyJobIntentService", "onHandleWork running");
+        showNotification(getApplicationContext(), "Tieu de", "Noi dung...", new Intent());
     }
 
     public void showNotification(Context context, String title, String body, Intent intent) {

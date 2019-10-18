@@ -35,4 +35,13 @@ public class MainActivity extends AppCompatActivity {
             alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, firstMillis, 60 * 1000, pIntent);
         }
     }
+
+    public void cancelAlarm() {
+        Intent intent = new Intent(getApplicationContext(), MyAlarmReceiver.class);
+        final PendingIntent pIntent = PendingIntent.getBroadcast(this, MyAlarmReceiver.REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarm = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        if (alarm != null) {
+            alarm.cancel(pIntent);
+        }
+    }
 }

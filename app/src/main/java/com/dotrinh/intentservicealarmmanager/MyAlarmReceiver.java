@@ -3,6 +3,7 @@ package com.dotrinh.intentservicealarmmanager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 public class MyAlarmReceiver extends BroadcastReceiver {
     public static final int REQUEST_CODE = 12345;
@@ -13,7 +14,8 @@ public class MyAlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Intent i = new Intent(context, MyTestService.class);
         i.putExtra("foo", "bar");
-        context.startService(i);
+//        context.startService(i);
+        Log.i("MyAlarmReceiver", "onReceive running");
     }
 
 }
